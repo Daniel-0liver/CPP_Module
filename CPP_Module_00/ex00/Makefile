@@ -15,7 +15,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -f
 
-$(NAME): $(OBJS)
+$(NAME): $(SRC)
 		@ $(CC) $(FLAGS) $(INC) $(SRC) $(LIB) -o $(NAME)
 		@echo "$(COLOUR_GREEN)$(NAME) is ready to use $(COLOUR_END)"
 
