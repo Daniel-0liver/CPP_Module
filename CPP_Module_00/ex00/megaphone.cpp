@@ -6,12 +6,11 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:57:17 by dateixei          #+#    #+#             */
-/*   Updated: 2023/04/21 01:29:01 by dateixei         ###   ########.fr       */
+/*   Updated: 2023/04/23 12:57:10 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <cstring>
 #include <cctype>
 
 int main(int argc, char* argv[]) {

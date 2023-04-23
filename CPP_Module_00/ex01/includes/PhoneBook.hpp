@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 15:23:56 by dateixei          #+#    #+#             */
-/*   Updated: 2023/04/23 01:41:26 by dateixei         ###   ########.fr       */
+/*   Updated: 2023/04/23 14:30:57 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,13 @@
 class PhoneBook
 {
 	public:
-		void	ADD(void);
-		void	SEARCH(void);
+		void	ADD(Contact *contact);
+		void	SEARCH(Contact *contact);
 		void	PrintStartMessage(void);
 		std::string	command;
 	private:
-		bool routine;
 };
 
-void	Menu(void);
+void	Menu(PhoneBook *PhoneBook, Contact *Contact);
 
 #endif
