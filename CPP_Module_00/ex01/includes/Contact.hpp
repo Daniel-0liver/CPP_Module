@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/21 15:20:40 by dateixei          #+#    #+#             */
-/*   Updated: 2023/04/23 01:44:26 by dateixei         ###   ########.fr       */
+/*   Created: 2023/04/22 17:10:12 by dateixei          #+#    #+#             */
+/*   Updated: 2023/04/23 01:40:06 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#ifndef __CONTACT_HPP__
+# define __CONTACT_HPP__
 
-int main()
+class Contact
 {
-	std::cout << "\tWELCOME TO MY AWESOME PHONE BOOK!!!\n" << std::endl;
-	Menu();
-	
-	return (0);
-}
+private:
+public:
+};
+
+#endif

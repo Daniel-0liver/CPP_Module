@@ -1,40 +1,43 @@
-GREEN		=	\033[1;32m
-YELLOW		=	\033[1;33m
-GREY		=	\033[1;30m
-COLOUR_END	=	\033[0m
+GREEN		= \033[0;32m
+RED			= \033[0;31m
+RESET		= \033[0m
 
-NAME 		= 	ex01
+NAME		=	myAwesomePhoneBook
 
-SRC 		=	./src/main.cpp
+HEADER		=	./includes
 
-CC 			=	c++
+OBJ			=	$(patsubst src%, obj%, $(SRC:.cpp=.o))
 
-INC			=	-I ./includes
+SRC			=	src/main.cpp \
+				src/Contact.cpp \
+				src/PhoneBook.cpp
 
-FLAGS		=	-Wall -Wextra -Werror -std=c++98
+CC			=	c++
 
-RM			=	rm -f
+FLAGS		=	-I${HEADER} -Wall -Wextra -Werror -std=c++98
 
-$(NAME): $(OBJS)
-		@ $(CC) $(FLAGS) $(INC) $(SRC) $(LIB) -o $(NAME)
-		@echo "$(GREEN)$(NAME) is ready to use $(COLOUR_END)"
+all:		obj $(NAME)
 
-all : $(NAME)
+$(NAME):	$(OBJ)
+			@$(CC) $(FLAGS) -o $@ $^
+
+obj:
+			@mkdir -p obj
+
+obj/%.o:	src/%.cpp
+			@$(CC) $(FLAGS) -o $@ -c $<
+			@echo "$@ $(GREEN)created$(RESET)"
+
+valgrind:	all
+	valgrind --leak-check=full --show-leak-kinds=all --quiet ./philo 5 1000 100 100
 
 clean:
-		@ $(RM) $(NAME)
-		@echo "$(YELLOW)$(NAME) cleaned $(COLOUR_END)"
+			@rm -rf $(OBJ) obj
+			@echo "Object files $(RED)removed.$(RESET)"
 
-run: clean all
-		@echo "$(GREY)./$(NAME) $(COLOUR_END)"
-		@./$(NAME)
+fclean:		clean
+			@rm -rf $(NAME)
 
-valgrind: clean all
-		valgrind ./$(NAME)
+re:			fclean all
 
-valgrindfull: re
-		valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)
-
-re: clean all
-
-.PHONY: clean all re valgrind valgrindfull
+.PHONY:		all obj valgrind clean fclean re

@@ -6,12 +6,13 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 15:23:56 by dateixei          #+#    #+#             */
-/*   Updated: 2023/04/21 15:40:45 by dateixei         ###   ########.fr       */
+/*   Updated: 2023/04/23 01:41:26 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONE_BOOK_HPP_
-# define PHONE_BOOK_HPP_
+#ifndef __PHONE_BOOK_HPP__
+# define __PHONE_BOOK_HPP__
+
 # define BLACK	"\033[1;30m"
 # define RED	"\033[1;31m"
 # define GREEN	"\033[1;32m"
@@ -20,6 +21,20 @@
 # define WHITE	"\033[1;37m"
 # define ENDC	"\033[0m"
 
-#include <iostream>
+# include "Contact.hpp"
+# include <iostream>
+
+class PhoneBook
+{
+	public:
+		void	ADD(void);
+		void	SEARCH(void);
+		void	PrintStartMessage(void);
+		std::string	command;
+	private:
+		bool routine;
+};
+
+void	Menu(void);
 
 #endif
