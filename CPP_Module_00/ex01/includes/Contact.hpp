@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 17:10:12 by dateixei          #+#    #+#             */
-/*   Updated: 2023/04/23 16:10:03 by dateixei         ###   ########.fr       */
+/*   Updated: 2023/04/24 13:02:38 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,17 @@ class Contact
 			std::string		_nick_name;
 			std::string		_phone_number;
 			std::string		_darkest_secret;
-			std::string		_contacts[8];
 	public:
-			void		setFirstName(std::string firstName);
-			void		setLastName(std::string lastName);
-			void		setNickName(std::string nickName);
-			void		setPhoneNumber(std::string phoneNumber);
-			void		setDarkestSecret(std::string darkSecret);
-			// void		search(void);
-			std::string	getFirstName();
-
+			void			setFirstName(std::string firstName);
+			void			setLastName(std::string lastName);
+			void			setNickName(std::string nickName);
+			void			setPhoneNumber(std::string phoneNumber);
+			void			setDarkestSecret(std::string darkSecret);
+			std::string		getFirstName() const ;
+			std::string		getLastName() const ;
+			std::string		getNickName() const ;
+			std::string		getPhoneNumber() const ;
+			std::string		getDarkestSecret() const ;
 };
 
 #endif

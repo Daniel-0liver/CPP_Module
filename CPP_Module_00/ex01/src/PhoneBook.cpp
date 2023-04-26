@@ -6,33 +6,35 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 17:02:23 by dateixei          #+#    #+#             */
-/*   Updated: 2023/04/23 18:07:19 by dateixei         ###   ########.fr       */
+/*   Updated: 2023/04/26 18:38:43 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-void	Menu(PhoneBook *PhoneBook, Contact *Contact)
+void	Menu(PhoneBook *PhoneBook)
 {
 	PhoneBook->PrintStartMessage();
 	std::cin >> PhoneBook->command;
 	if (!PhoneBook->command.compare("ADD"))
-		PhoneBook->ADD(Contact);
-	// else if (!PhoneBook->command.compare("SEARCH"))
-	// 	PhoneBook->SEARCH(Contact);
+		PhoneBook->ADD(PhoneBook);
+	else if (!PhoneBook->command.compare("SEARCH"))
+		PhoneBook->SEARCH(PhoneBook);
 	else if (!PhoneBook->command.compare("EXIT"))
 		return ;
-	Menu(PhoneBook, Contact);
+	Menu(PhoneBook);
 }
 
-void	PhoneBook::ADD(Contact *contact)
+void	PhoneBook::ADD(PhoneBook *PhoneBook)
 {
+	int index = 0;
+
     std::string firstName, lastName, nickname, phoneNumber, darkestSecret;
 
     std::cout << "Enter first name: ";
-    // std::cin.ignore(256, "\n");
     std::getline(std::cin, firstName);
-
+	PhoneBook->Contacts[index].setFirstName(firstName);
+	
     std::cout << "Enter last name: ";
     std::getline(std::cin, lastName);
 
@@ -45,10 +47,16 @@ void	PhoneBook::ADD(Contact *contact)
     std::cout << "Enter darkest secret: ";
     std::getline(std::cin, darkestSecret);
 
-	contact->getFirstName();
-
     std::cout << "Contact added successfully." << std::endl;
+	std::string test = PhoneBook->Contacts[0].getFirstName();
+	std::cout << test << std::endl;
 }
+
+void	PhoneBook::SEARCH(PhoneBook *PhoneBook)
+{
+	std::cout << PhoneBook->Contacts[0].getFirstName() << std::endl;
+}
+		
 
 void	PhoneBook::PrintStartMessage(void)
 {
