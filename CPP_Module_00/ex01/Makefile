@@ -40,4 +40,4 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY:		all obj valgrind clean fclean re
+.PHONY:		all valgrind clean fclean re

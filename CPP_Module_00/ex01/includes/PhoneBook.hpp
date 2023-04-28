@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 15:23:56 by dateixei          #+#    #+#             */
-/*   Updated: 2023/04/27 02:42:28 by dateixei         ###   ########.fr       */
+/*   Updated: 2023/04/28 02:59:53 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,26 @@
 # include "Contact.hpp"
 # include <iostream>
 # include <iomanip>
+# include <cstdlib>
+# include <unistd.h>
 
 const int	MAX_CONTACTS = 8;
 
 class PhoneBook
 {
 	private:
-		Contact Contacts[MAX_CONTACTS];
-		int		num_contact;
+		Contact 	Contacts[MAX_CONTACTS];
+		int			num_contact;
+		std::string line_stop;
 	public:
 		PhoneBook() : num_contact(0) {}
-		void	ADD();
-		void	SEARCH();
-		void	PrintStartMessage(void);
+		int			size_list;
+		void		ADD(void);
+		void		SEARCH(void);
+		void		getContactInfo(void);
+		void		PrintStartMessage(void);
+		void		print_contacts(void);
+		void		print_contact(int index);
 		std::string	command;
 };
 
