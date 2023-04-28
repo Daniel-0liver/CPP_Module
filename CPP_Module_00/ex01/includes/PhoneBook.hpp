@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 15:23:56 by dateixei          #+#    #+#             */
-/*   Updated: 2023/04/28 02:59:53 by dateixei         ###   ########.fr       */
+/*   Updated: 2023/04/28 22:23:57 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,9 @@
 # define ENDC	"\033[0m"
 
 # include "Contact.hpp"
-# include <iostream>
-# include <iomanip>
-# include <cstdlib>
-# include <unistd.h>
+# include <iostream> // std
+# include <iomanip> // setw
+# include <cstdlib> // system
 
 const int	MAX_CONTACTS = 8;
 
@@ -48,5 +47,7 @@ class PhoneBook
 };
 
 void	Menu();
+bool 	isNumeric(const char* str);
+
 
 #endif

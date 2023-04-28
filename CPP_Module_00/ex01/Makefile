@@ -29,7 +29,7 @@ obj/%.o:	src/%.cpp
 			@echo "$@ $(GREEN)created$(RESET)"
 
 valgrind:	all
-	valgrind --leak-check=full --show-leak-kinds=all --quiet ./philo 5 1000 100 100
+	valgrind --leak-check=full --show-leak-kinds=all --quiet
 
 clean:
 			@rm -rf $(OBJ) obj
