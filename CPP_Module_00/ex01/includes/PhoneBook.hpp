@@ -6,10 +6,11 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 15:23:56 by dateixei          #+#    #+#             */
-/*   Updated: 2023/04/28 22:23:57 by dateixei         ###   ########.fr       */
+/*   Updated: 2023/04/30 15:51:44 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #ifndef __PHONE_BOOK_HPP__
 # define __PHONE_BOOK_HPP__
 
@@ -36,6 +37,7 @@ class PhoneBook
 		std::string line_stop;
 	public:
 		PhoneBook() : num_contact(0) {}
+		~PhoneBook();
 		int			size_list;
 		void		ADD(void);
 		void		SEARCH(void);

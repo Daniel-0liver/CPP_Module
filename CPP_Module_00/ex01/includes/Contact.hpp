@@ -6,10 +6,11 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 17:10:12 by dateixei          #+#    #+#             */
-/*   Updated: 2023/04/28 23:00:03 by dateixei         ###   ########.fr       */
+/*   Updated: 2023/04/29 20:36:49 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #ifndef __CONTACT_HPP__
 # define __CONTACT_HPP__
 
