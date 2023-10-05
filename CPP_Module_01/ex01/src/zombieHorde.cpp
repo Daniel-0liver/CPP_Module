@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 01:43:13 by dateixei          #+#    #+#             */
-/*   Updated: 2023/10/05 02:39:54 by dateixei         ###   ########.fr       */
+/*   Created: 2023/10/04 02:37:15 by dateixei          #+#    #+#             */
+/*   Updated: 2023/10/05 03:12:23 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-std::string		Zombie::getName( void ) {
-	return (this->_name);
-}
+Zombie* zombieHorde( int N, std::string name ) {
+	if (N <= 0 || name.size() <= 0)
+		return (NULL);
 
-void	Zombie::setName(std::string name) {
-	this->_name = name;
-}
+	Zombie*	horde = new Zombie[N];
 
-void	Zombie::announce( void ) {
-	std::string name = getName();
-	
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+	for (int i = 0; i < N; i++) {
+		horde[i].setName( name );
+	}
 
-Zombie::Zombie( std::string name ) {
-	setName(name);
-}
-
-Zombie::~Zombie() {
-	std::cout << getName() << ": Dyiiiiiiiiinnnngggg..." << std::endl;
+	return (horde);
 }

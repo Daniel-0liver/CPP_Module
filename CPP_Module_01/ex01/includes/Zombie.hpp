@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 01:43:23 by dateixei          #+#    #+#             */
-/*   Updated: 2023/10/05 02:16:38 by dateixei         ###   ########.fr       */
+/*   Created: 2023/10/04 02:34:40 by dateixei          #+#    #+#             */
+/*   Updated: 2023/10/05 03:07:39 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,12 @@ class Zombie
 private:
 	std::string		_name;
 public:
+	Zombie();
 	Zombie( std::string name );
 	~Zombie();
-	void			setName( std::string name );
-	void			announce( void );
-	std::string		getName( void );
+	void	announce( void );
+	void	setName( std::string name );
 };
+Zombie* 	zombieHorde( int N, std::string name );
 
-Zombie* 		newZombie( std::string name );
-void 			randomChump( std::string name );
 #endif

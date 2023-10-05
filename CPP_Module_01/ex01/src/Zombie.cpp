@@ -5,31 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 01:43:13 by dateixei          #+#    #+#             */
-/*   Updated: 2023/10/05 02:39:54 by dateixei         ###   ########.fr       */
+/*   Created: 2023/10/04 02:36:37 by dateixei          #+#    #+#             */
+/*   Updated: 2023/10/05 03:08:39 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-std::string		Zombie::getName( void ) {
-	return (this->_name);
-}
-
-void	Zombie::setName(std::string name) {
-	this->_name = name;
-}
-
-void	Zombie::announce( void ) {
-	std::string name = getName();
-	
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
-
 Zombie::Zombie( std::string name ) {
-	setName(name);
+	_name = name;
+}
+
+Zombie::Zombie() {
+	
 }
 
 Zombie::~Zombie() {
-	std::cout << getName() << ": Dyiiiiiiiiinnnngggg..." << std::endl;
+	std::cout << this->_name << ": Dyiiiiiiiiinnnngggg..." << std::endl;
+}
+
+void	Zombie::setName( std::string name ) {
+	_name = name;
+}
+
+void	Zombie::announce( void ) {
+	std::string name = this->_name;
+	
+	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
