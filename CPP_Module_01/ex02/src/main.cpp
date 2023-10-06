@@ -5,22 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 02:34:16 by dateixei          #+#    #+#             */
-/*   Updated: 2023/10/06 11:24:09 by dateixei         ###   ########.fr       */
+/*   Created: 2023/10/06 11:25:00 by dateixei          #+#    #+#             */
+/*   Updated: 2023/10/06 11:38:01 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
 
-int main() {
-	int	N = 5;
-	Zombie *horde = zombieHorde(N, "Foo");
-	if (!horde)
-		return (-1);
-	for (int i = 0; i < N; i++) {
-		horde[i].announce();
-	}
-	delete[] horde;
-	
-	return (0);
+int	main() {
+	std::string		myString = "HI THIS IS BRAIN";
+
+	std::string*	stringPTR = &myString;
+
+	std::string&	stringREF = myString;
+
+	std::cout << "Address of myString  = " << &myString << std::endl;
+	std::cout << "Address of stringPTR = " << stringPTR << std::endl;
+	std::cout << "Address of stringREF = " << &stringREF << std::endl << std::endl;
+
+	std::cout << "Value of myString  = " << myString << std::endl;
+	std::cout << "Value of stringPTR = " << *stringPTR << std::endl;
+	std::cout << "Value of stringREF = " << stringREF << std::endl;
 }
