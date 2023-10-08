@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 19:15:42 by dateixei          #+#    #+#             */
-/*   Updated: 2023/10/09 00:35:42 by dateixei         ###   ########.fr       */
+/*   Updated: 2023/10/09 00:35:36 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 # define COLOUR_END "\033[0m"
 
 #include <iostream>
-
 
 class Harl {
 private:
