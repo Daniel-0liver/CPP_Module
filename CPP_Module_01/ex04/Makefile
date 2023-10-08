@@ -2,27 +2,23 @@ GREEN		= \033[0;32m
 RED			= \033[0;31m
 RESET		= \033[0m
 
-NAME		=	myAwesomePhoneBook
+NAME		=	ex04
 
 HEADER		=	./includes
 
 OBJ			=	$(patsubst src%, obj%, $(SRC:.cpp=.o))
 
-SRC			=	src/main.cpp \
-				src/Contact.cpp \
-				src/PhoneBook.cpp
+SRC			=	main.cpp
 
 CC			=	c++
 
-FLAGS		=	-I${HEADER} -Wall -Wextra -Werror -std=c++98
+FLAGS		=	-I${HEADER} -Wall -Wextra -Werror -std=c++98 #-fsanitize=address
 
-all:		obj $(NAME)
+all:		$(NAME)
 
 $(NAME):	$(OBJ)
 			@$(CC) $(FLAGS) -o $@ $^
 
-obj:
-			@mkdir -p obj
 
 obj/%.o:	src/%.cpp
 			@$(CC) $(FLAGS) -o $@ -c $<
