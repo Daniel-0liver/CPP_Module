@@ -2,16 +2,14 @@ GREEN		= \033[0;32m
 RED			= \033[0;31m
 RESET		= \033[0m
 
-NAME		=	ex00
+NAME		=	ex01
 
 HEADER		=	./includes
 
 OBJ			=	$(patsubst src%, obj%, $(SRC:.cpp=.o))
 
 SRC			=	src/main.cpp \
-				src/Zombie.cpp \
-				src/newZombie.cpp \
-				src/randomChump.cpp
+				src/Fixed.cpp
 
 CC			=	c++
 
@@ -30,7 +28,7 @@ obj/%.o:	src/%.cpp
 			@echo "$@ $(GREEN)created$(RESET)"
 
 valgrind:	all
-	valgrind --leak-check=full --show-leak-kinds=all --quiet
+			valgrind --leak-check=full --show-leak-kinds=all --quiet
 
 clean:
 			@rm -rf $(OBJ) obj

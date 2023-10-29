@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 03:02:17 by dateixei          #+#    #+#             */
-/*   Updated: 2023/10/19 01:39:32 by dateixei         ###   ########.fr       */
+/*   Created: 2023/10/19 01:30:38 by dateixei          #+#    #+#             */
+/*   Updated: 2023/10/19 02:03:28 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #ifndef __FIXED_HPP_
 # define __FIXED_HPP_
 
-# include <iostream>
+#include <iostream>
+#include <cmath>
 
 class Fixed
 {
@@ -23,8 +24,9 @@ private:
 	static const int	_fractionalBits = 8;
 public:
 	Fixed();
-	Fixed( const Fixed& copyFixed );
 	~Fixed();
+	Fixed( const int raw );
+	Fixed( const Fixed& copyFixed );
 	Fixed &operator=( Fixed const &operatorFixed );
 	int		getRawBits( void );
 	void	setRawBits( int const raw );
