@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 01:32:13 by dateixei          #+#    #+#             */
-/*   Updated: 2023/10/19 02:04:02 by dateixei         ###   ########.fr       */
+/*   Updated: 2023/10/30 01:22:48 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,13 @@ Fixed::~Fixed() {
 	std::cout << "Destructor called\n";
 }
 
-Fixed::Fixed( const int raw )
+Fixed::Fixed( const int intValue ) : _rawBits(intValue << _fractionalBits) {
+	std::cout << "Int constructor called\n";
+}
 
+Fixed::Fixed( const float floatValue ) : _rawBits(roundf(floatValue * (1 << _fractionalBits))) {
+	std::cout << "Float constructor called\n";
+}
 
 Fixed::Fixed( const Fixed& copyFixed ) : _rawBits(copyFixed._rawBits) {
 	std::cout << "Copy constructor called\n";
@@ -43,4 +48,17 @@ int		Fixed::getRawBits( void ) {
 
 void	Fixed::setRawBits( int const raw ) {
 	_rawBits = raw;
+}
+
+float 	Fixed::toFloat( void ) const {
+	return ( _rawBits / (float)(1 << _fractionalBits) );
+}
+
+int 	Fixed::toInt( void ) const {
+	return ( _rawBits >> _fractionalBits );
+}
+
+std::ostream& operator<<(std::ostream& os, const Fixed& fixed) {
+	os << fixed.toFloat();
+	return os;
 }
