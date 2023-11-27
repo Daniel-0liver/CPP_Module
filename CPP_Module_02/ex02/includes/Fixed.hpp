@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 18:18:26 by dateixei          #+#    #+#             */
-/*   Updated: 2023/11/27 02:53:35 by dateixei         ###   ########.fr       */
+/*   Updated: 2023/11/27 13:55:11 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,22 @@ public:
 	Fixed	operator-( const Fixed &operatorFixed ) const;
 	Fixed	operator*( const Fixed &operatorFixed ) const;
 	Fixed	operator/( const Fixed &operatorFixed ) const;
+
+	/*increment/decrement (pre-increment and post-increment, pre-decrement and
+	post-decrement) operators, that will increase or decrease the fixed-point value from
+	the smallest representable ε such as 1 + ε > 1.*/
+	Fixed&	operator++( void );
+	Fixed	operator++( int );
+	Fixed&	operator--( void );
+	Fixed	operator--( int );
+
+	/*Public overloaded member functions min and max*/
+	static Fixed&	min( Fixed& a, Fixed& b );
+	static const Fixed&	min( const Fixed& a, const Fixed& b );
+	static Fixed&	max( Fixed& a, Fixed& b );
+	static const Fixed&	max( const Fixed& a, const Fixed& b );
 };
 
-std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
+std::ostream&	operator<<( std::ostream& os, const Fixed& fixed );
 
 #endif
