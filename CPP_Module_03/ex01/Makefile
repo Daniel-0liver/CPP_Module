@@ -2,14 +2,15 @@ GREEN		= 	\033[0;32m
 RED			= 	\033[0;31m
 RESET		= 	\033[0m
 
-NAME		=	ex02
+NAME		=	ex01
 
 HEADER		=	./includes
 
 OBJ			=	$(patsubst src%, obj%, $(SRC:.cpp=.o))
 
-SRC			=	src/tests.cpp \
-				src/Account.cpp
+SRC			=	src/main.cpp \
+				src/ClapTrap.cpp \
+				src/ScavTrap.cpp
 
 CC			=	c++
 
