@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 03:17:36 by dateixei          #+#    #+#             */
-/*   Updated: 2023/11/29 20:55:12 by dateixei         ###   ########.fr       */
+/*   Updated: 2023/11/30 02:55:36 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ int main(void)
 	std::cout << "Energy points: " << clapTrap3.getEnergyPoints() << std::endl;
 	std::cout << "Attack damage: " << clapTrap3.getAttackDamage() << std::endl;
 	//tests for energy points
-	clapTrap.setEnergyPoints(0);
+	clapTrap.setEnergyPoints(-1);
 	clapTrap.attack("Enemy");
-	clapTrap.beRepaired(5);
+	clapTrap.setHitPoints(-1);
 	clapTrap.setEnergyPoints(20);
 	clapTrap.attack("Enemy");
 	return (0);

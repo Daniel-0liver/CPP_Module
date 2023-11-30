@@ -8,8 +8,10 @@ HEADER		=	./includes
 
 OBJ			=	$(patsubst src%, obj%, $(SRC:.cpp=.o))
 
-SRC			=	src/tests.cpp \
-				src/Account.cpp
+SRC			=	src/main.cpp \
+				src/ClapTrap.cpp \
+				src/ScavTrap.cpp \
+				src/FragTrap.cpp
 
 CC			=	c++
 
