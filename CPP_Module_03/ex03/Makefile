@@ -8,12 +8,15 @@ HEADER		=	./includes
 
 OBJ			=	$(patsubst src%, obj%, $(SRC:.cpp=.o))
 
-SRC			=	src/tests.cpp \
-				src/Account.cpp
+SRC			=	src/main.cpp \
+				src/ClapTrap.cpp \
+				src/ScavTrap.cpp \
+				src/FragTrap.cpp \
+				src/DiamondTrap.cpp
 
 CC			=	c++
 
-FLAGS		=	-I${HEADER} -Wall -Wextra -Werror -std=c++98
+FLAGS		=	-I${HEADER} -Wall -Wextra -Werror -std=c++98 -Wshadow
 
 all:		obj $(NAME)
 
