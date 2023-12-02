@@ -6,17 +6,17 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 00:49:30 by dateixei          #+#    #+#             */
-/*   Updated: 2023/12/02 02:30:42 by dateixei         ###   ########.fr       */
+/*   Updated: 2023/12/02 00:51:44 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal() : _type( "WrongAnimal" ) {
+WrongAnimal::WrongAnimal() : type( "WrongAnimal" ) {
 	std::cout << "WrongAnimal default constructor called" << std::endl;
 }
 
-WrongAnimal::WrongAnimal( std::string type ) : _type( type ) {
+WrongAnimal::WrongAnimal( std::string type ) : type( type ) {
 	std::cout << "WrongAnimal constructor called" << std::endl;
 }
 
@@ -31,12 +31,12 @@ WrongAnimal::~WrongAnimal() {
 
 WrongAnimal &WrongAnimal::operator=( const WrongAnimal &copy ) {
 	std::cout << "WrongAnimal assignation operator called" << std::endl;
-	this->_type = copy._type;
+	this->type = copy.type;
 	return ( *this );
 }
 
 std::string WrongAnimal::getType() const {
-	return ( this->_type );
+	return ( this->type );
 }
 
 void WrongAnimal::makeSound() const {

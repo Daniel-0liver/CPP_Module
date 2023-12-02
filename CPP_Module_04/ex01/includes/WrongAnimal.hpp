@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 00:48:24 by dateixei          #+#    #+#             */
-/*   Updated: 2023/12/02 02:28:21 by dateixei         ###   ########.fr       */
+/*   Updated: 2023/12/02 00:53:12 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 class WrongAnimal
 {
 protected:
-	std::string	_type;
+	std::string type;
 public:
 	WrongAnimal();
 	WrongAnimal( std::string type );

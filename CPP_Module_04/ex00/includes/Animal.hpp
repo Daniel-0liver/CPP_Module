@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 21:05:46 by dateixei          #+#    #+#             */
-/*   Updated: 2023/12/02 00:58:12 by dateixei         ###   ########.fr       */
+/*   Updated: 2023/12/02 02:27:53 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 class Animal
 {
 protected:
-	std::string type;
+	std::string		_type;
 public:
 	Animal();
 	Animal( std::string type );

@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 00:50:36 by dateixei          #+#    #+#             */
-/*   Updated: 2023/12/02 02:31:03 by dateixei         ###   ########.fr       */
+/*   Updated: 2023/12/02 00:59:42 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ WrongCat::~WrongCat() {
 
 WrongCat &WrongCat::operator=( const WrongCat &copy ) {
 	std::cout << "WrongCat assignation operator called" << std::endl;
-	this->_type = copy._type;
+	this->type = copy.type;
 	return (*this);
 }
 

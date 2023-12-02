@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/02 00:48:24 by dateixei          #+#    #+#             */
-/*   Updated: 2023/12/02 02:28:21 by dateixei         ###   ########.fr       */
+/*   Created: 2023/12/02 00:55:23 by dateixei          #+#    #+#             */
+/*   Updated: 2023/12/02 02:56:04 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include <iostream>
+#include "Dog.hpp"
+#include "Cat.hpp"
 
-class WrongAnimal
-{
-protected:
-	std::string	_type;
-public:
-	WrongAnimal();
-	WrongAnimal( std::string type );
-	WrongAnimal( const WrongAnimal &copy );
-	~WrongAnimal();
-	WrongAnimal	&operator=( const WrongAnimal &copy );
-	std::string	getType() const;
-	void		makeSound() const;
-};
+int	main() {
+	Animal *animals[10];
+	for (int i = 0; i < 10; i++)
+		if (i % 2)
+			animals[i] = new Dog();
+		else
+			animals[i] = new Cat();
+	std::cout << std::endl;
+	for (int i = 0; i < 10; i++)
+		animals[i]->makeSound();
+	std::cout << std::endl;
+	for (int i = 0; i < 10; i++)
+		delete animals[i];
+	return (0);
+}
