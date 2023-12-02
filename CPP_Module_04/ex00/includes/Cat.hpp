@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 02:50:29 by dateixei          #+#    #+#             */
-/*   Updated: 2023/12/01 02:51:05 by dateixei         ###   ########.fr       */
+/*   Updated: 2023/12/02 00:57:52 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ class Cat : public Animal
 {
 public:
 	Cat();
-	Cat(const Cat &copy);
-	virtual ~Cat();
-	Cat &operator=(const Cat &copy);
-	void makeSound() const;
+	Cat( const Cat &copy );
+	virtual	~Cat();
+	Cat		&operator=( const Cat &copy );
+	void	makeSound() const;
 };
