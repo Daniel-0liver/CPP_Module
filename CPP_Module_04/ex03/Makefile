@@ -2,14 +2,18 @@ GREEN		= 	\033[0;32m
 RED			= 	\033[0;31m
 RESET		= 	\033[0m
 
-NAME		=	ex00
+NAME		=	ex03
 
 HEADER		=	./includes
 
 OBJ			=	$(patsubst src%, obj%, $(SRC:.cpp=.o))
 
 SRC			=	src/main.cpp \
-				src/ClapTrap.cpp
+				src/AMateria.cpp \
+				src/Character.cpp \
+				src/MateriaSource.cpp \
+				src/Cure.cpp \
+				src/Ice.cpp
 
 CC			=	c++
 
