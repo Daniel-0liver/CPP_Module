@@ -6,13 +6,11 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 01:43:23 by dateixei          #+#    #+#             */
-/*   Updated: 2023/10/05 02:16:38 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/01/10 13:59:29 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef __ZOMBIE_HPP__
-# define __ZOMBIE_HPP__
 
 #include <iostream>
 
@@ -30,4 +28,3 @@ public:
 
 Zombie* 		newZombie( std::string name );
 void 			randomChump( std::string name );
-#endif

@@ -21,14 +21,17 @@ $(NAME): $(SRC)
 
 all : $(NAME)
 
-clean:
-		@ $(RM) $(NAME)
-		@echo "$(COLOUR_YELLOW)$(NAME) cleaned $(COLOUR_END)"
-
 valgrind: clean all
 		valgrind ./$(NAME)
 
 valgrindfull: re
 		valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)
+
+clean:
+		@ $(RM) $(NAME)
+		@echo "$(COLOUR_YELLOW)$(NAME) cleaned $(COLOUR_END)"
+
+fclean:	clean
+		@rm -rf $(NAME)
 
 re: clean all
