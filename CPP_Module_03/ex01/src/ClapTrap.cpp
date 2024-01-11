@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 21:09:40 by dateixei          #+#    #+#             */
-/*   Updated: 2023/11/30 03:00:33 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/01/11 16:31:47 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int ClapTrap::getAttackDamage( void ) const {
 }
 
 // Setters
-void ClapTrap::setName( std::string name ) {
+void ClapTrap::setName(const std::string name ) {
 	this->_name = name;
 }
 
@@ -73,11 +73,11 @@ void ClapTrap::setAttackDamage( int attackDamage ) {
 	this->_attackDamage = attackDamage;
 }
 
-void ClapTrap::setAll( std::string name, int hitPoints, int energyPoints, int attackDamage ) {
-	setName( name );
-	setHitPoints( hitPoints );
-	setEnergyPoints( energyPoints );
-	setAttackDamage( attackDamage );
+void ClapTrap::setAll(const std::string name, int hitPoints, int energyPoints, int attackDamage ) {
+	this->_name = name;
+	this->_hitPoints = hitPoints;
+	this->_energyPoints = energyPoints;
+	this->_attackDamage = attackDamage;
 }
 
 // Methods

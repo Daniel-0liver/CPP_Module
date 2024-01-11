@@ -6,13 +6,11 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 18:18:26 by dateixei          #+#    #+#             */
-/*   Updated: 2023/11/27 13:55:11 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/01/10 17:39:06 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef __FIXED_HPP_
-# define __FIXED_HPP_
 
 # include <iostream>
 # include <cmath>
@@ -64,5 +62,3 @@ public:
 };
 
 std::ostream&	operator<<( std::ostream& os, const Fixed& fixed );
-
-#endif
