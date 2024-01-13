@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 00:46:40 by dateixei          #+#    #+#             */
-/*   Updated: 2023/12/02 12:53:24 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/01/13 15:41:19 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ Dog::Dog() : AAnimal( "Dog" ), _brain( new Brain() ) {
 
 Dog::Dog( const Dog &copy ) : AAnimal( copy ) {
 	std::cout << "Dog copy constructor called" << std::endl;
-	*this = copy;
+	_brain = new Brain( *copy._brain );
+	_type = copy._type;
 }
 
 Dog::~Dog() {
