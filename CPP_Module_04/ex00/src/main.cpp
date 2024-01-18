@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 00:55:23 by dateixei          #+#    #+#             */
-/*   Updated: 2023/12/02 01:07:32 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/01/13 14:53:06 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int	main() {
 	delete meta;
 	delete j;
 	delete i;
+	delete wrongMeta;
 	delete wrong;
 	return (0);
 }

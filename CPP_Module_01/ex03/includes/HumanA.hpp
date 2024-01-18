@@ -6,13 +6,11 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 11:40:31 by dateixei          #+#    #+#             */
-/*   Updated: 2023/10/07 21:43:15 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/01/10 13:58:48 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef __HUMAN_A_HPP__
-# define __HUMAN_A_HPP__
 
 #include <iostream>
 #include "Weapon.hpp"
@@ -29,5 +27,3 @@ public:
 	void				setName( std::string name );
 	void				setWeapon( Weapon weapon );
 };
-
-#endif

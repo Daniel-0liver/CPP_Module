@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 17:02:23 by dateixei          #+#    #+#             */
-/*   Updated: 2023/04/28 23:25:15 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/01/09 19:52:55 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,3 +126,5 @@ void	PhoneBook::print_contacts(void) {
 	}
 	std::cout << "\t└──────────┴──────────┴──────────┴──────────┘" << std::endl;
 }
+
+PhoneBook::~PhoneBook() {}

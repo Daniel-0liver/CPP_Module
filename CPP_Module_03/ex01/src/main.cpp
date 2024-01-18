@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 03:17:36 by dateixei          #+#    #+#             */
-/*   Updated: 2023/11/30 02:07:48 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/01/11 16:12:50 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 int main(void)
 {
-	//create tests for ScavTrap
 	ClapTrap clapTrap("Clap");
 	ScavTrap scavTrap("Scav");
 	std::cout << scavTrap.getHitPoints() << std::endl;

@@ -6,13 +6,11 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 11:40:34 by dateixei          #+#    #+#             */
-/*   Updated: 2023/10/07 22:11:02 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/01/10 13:58:17 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef __HUMAN_B_HPP__
-# define __HUMAN_B_HPP__
 
 #include <iostream>
 #include "Weapon.hpp"
@@ -29,5 +27,3 @@ public:
 	void				setWeapon( Weapon& weapon );
 	void				attack();
 };
-
-#endif

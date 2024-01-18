@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 00:56:56 by dateixei          #+#    #+#             */
-/*   Updated: 2023/12/03 01:07:53 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/01/13 16:49:34 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,31 +24,33 @@ Character::Character( std::string const & name ) : _name( name ), _count( 0 ) {
 		this->_inventory[i] = NULL;
 }
 
-Character::Character( const Character &copy ) {
-	std::cout << "Character Copy constructor called" << std::endl;
-	if ( this != &copy )
-		*this = copy;
+Character::Character(const Character &copy) {
+    std::cout << "Character Copy constructor called" << std::endl;
+    *this = copy;
 }
 
 Character::~Character() {
-	std::cout << "Character Destructor called" << std::endl;
-	for ( int i = 0; i < 4; i++ )
-		if ( this->_inventory[i] )
-			delete this->_inventory[i];
+    std::cout << "Character Destructor called" << std::endl;
+    for (int i = 0; i < 4; i++)
+        if (this->_inventory[i])
+            delete this->_inventory[i];
 }
 
-Character &Character::operator=( const Character &copy ) {
-	std::cout << "Character Assignation operator called" << std::endl;
-	if ( this != &copy ) {
-		this->_name = copy._name;
-		for ( int i = 0; i < 4; i++ )
-			if ( this->_inventory[i] )
-				delete this->_inventory[i];
-		for ( int i = 0; i < 4; i++ )
-			this->_inventory[i] = copy._inventory[i]->clone();
-		this->_count = copy._count;
-	}
-	return *this;
+Character &Character::operator=(const Character &copy) {
+    std::cout << "Character Assignation operator called" << std::endl;
+    if (this != &copy) {
+        this->_name = copy._name;
+        for (int i = 0; i < 4; i++) {
+            if (this->_inventory[i])
+                delete this->_inventory[i];
+            if (copy._inventory[i])
+                this->_inventory[i] = copy._inventory[i]->clone();
+            else
+                this->_inventory[i] = NULL;
+        }
+        this->_count = copy._count;
+    }
+    return *this;
 }
 
 std::string const&	Character::getName() const {

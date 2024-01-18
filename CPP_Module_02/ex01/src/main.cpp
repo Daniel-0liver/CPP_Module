@@ -6,14 +6,14 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 01:32:24 by dateixei          #+#    #+#             */
-/*   Updated: 2023/11/02 18:13:10 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/01/10 17:55:04 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 int main( void ) {
-	Fixed a;
+	Fixed 		a;
 	Fixed const b( 10 );
 	Fixed const c( 42.42f );
 	Fixed const d( b );

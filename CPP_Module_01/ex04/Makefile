@@ -12,7 +12,7 @@ SRC			=	main.cpp
 
 CC			=	c++
 
-FLAGS		=	-I${HEADER} -Wall -Wextra -Werror -std=c++98 #-fsanitize=address
+FLAGS		=	-I${HEADER} -Wall -Wextra -Werror -std=c++98
 
 all:		$(NAME)
 

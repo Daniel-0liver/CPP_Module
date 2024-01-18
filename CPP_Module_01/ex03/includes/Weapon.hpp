@@ -6,13 +6,11 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 11:40:37 by dateixei          #+#    #+#             */
-/*   Updated: 2023/10/07 21:15:57 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/01/10 13:58:27 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef __WEAPON_HPP__
-# define __WEAPON_HPP__
 
 #include <iostream>
 
@@ -27,5 +25,3 @@ public:
 	const std::string	getType() const;
 	void				setType(const std::string type );
 };
-
-#endif

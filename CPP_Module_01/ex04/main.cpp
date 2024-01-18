@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 00:10:53 by dateixei          #+#    #+#             */
-/*   Updated: 2023/10/08 02:47:02 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/01/10 14:18:52 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,12 @@ int	replaceInFile( std::string s1, std::string s2, std::string fileName ) {
 		std::cerr << "Error: Unable to open input file: " << fileName << std::endl;
         return ( -1 );
 	}
+
+	if ( inputFile.peek() == std::ifstream::traits_type::eof() ) {
+		std::cerr << "Error: File is empty" << std::endl;
+		return ( -1 );
+	}
+	
 	newFileName = fileName + ".replace";
 	outputFile.open( newFileName );
 	if (!outputFile.is_open()) {
@@ -67,7 +73,7 @@ int	main(int argc, char **argv) {
 		std::cerr << "s1 is egual to s2" << std::endl;
         return ( 1 );
 	}
-	if ( s1.size() <= 0 || s2.size() <= 0 ) {
+	if ( s1.empty() || s2.empty() ) {
 		std::cerr << "String can't be empty" << std::endl;
         return ( 1 );
 	}

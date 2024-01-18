@@ -6,13 +6,12 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 19:15:42 by dateixei          #+#    #+#             */
-/*   Updated: 2023/10/09 00:35:42 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/01/10 14:59:37 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef __HARL_HPP__
-# define __HARL_HPP__
+
 # define RED "\033[0;31m"
 # define BLUE "\033[0;36m"
 # define GREEN "\033[0;32m"
@@ -35,5 +34,3 @@ public:
 		~Harl();
 		void		complain( std::string level );
 };
-
-#endif

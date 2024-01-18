@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 00:44:03 by dateixei          #+#    #+#             */
-/*   Updated: 2023/12/02 12:58:45 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/01/13 15:41:40 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ Cat::Cat() : AAnimal( "Cat" ), _brain( new Brain() ) {
 
 Cat::Cat( const Cat &copy ) : AAnimal( copy ) {
 	std::cout << "Cat copy constructor called" << std::endl;
-	*this = copy;
+	_brain = new Brain( *copy._brain );
+	_type = copy._type;
 }
 
 Cat::~Cat() {

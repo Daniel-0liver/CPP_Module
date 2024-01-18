@@ -31,9 +31,6 @@ obj/%.o:	src/%.cpp
 			@$(CC) $(FLAGS) -o $@ -c $<
 			@echo "$@ $(GREEN)created$(RESET)"
 
-valgrind:	all
-	valgrind --leak-check=full --show-leak-kinds=all --quiet ./ex02
-
 clean:
 			@rm -rf $(OBJ) obj
 			@echo "Object files $(RED)removed.$(RESET)"
