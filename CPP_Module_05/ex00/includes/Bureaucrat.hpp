@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 21:58:15 by dateixei          #+#    #+#             */
-/*   Updated: 2024/01/20 18:21:32 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/01/21 23:10:01 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,6 @@ public:
 	Bureaucrat &operator=(Bureaucrat const &rhs);
 	std::string const	getName() const;
 	int 				getGrade() const;
-	void 				incrementGrade();
-	void 				decrementGrade();
-	Bureaucrat 			&operator<<(Bureaucrat const &bureaucrat);
 	class GradeTooHighException : public std::exception
 	{
 		public:
@@ -42,3 +39,4 @@ public:
 			virtual const char *what() const throw();
 	};
 };
+std::ostream& 			operator<<( std::ostream& os, const Bureaucrat& bureaucrat);
