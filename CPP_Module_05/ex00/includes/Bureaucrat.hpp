@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 21:58:15 by dateixei          #+#    #+#             */
-/*   Updated: 2024/01/21 23:10:01 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/01/22 01:10:20 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <iostream>
 #include <string>
 #include <exception>
+#include <cstdlib>
 
 class Bureaucrat
 {
@@ -28,6 +29,9 @@ public:
 	Bureaucrat &operator=(Bureaucrat const &rhs);
 	std::string const	getName() const;
 	int 				getGrade() const;
+	void				setGrade(int grade);
+	void				incrementGrade();
+	void				decrementGrade();
 	class GradeTooHighException : public std::exception
 	{
 		public:

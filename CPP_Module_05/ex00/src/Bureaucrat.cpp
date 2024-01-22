@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 21:59:56 by dateixei          #+#    #+#             */
-/*   Updated: 2024/01/21 23:24:43 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/01/22 01:10:30 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,13 @@ Bureaucrat::Bureaucrat() : _name("default"), _grade(150) {}
 
 Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name)
 {
-	if (grade < 1)
-		throw Bureaucrat::GradeTooHighException();
-	else if (grade > 150)
-		throw Bureaucrat::GradeTooLowException();
-	else
-		this->_grade = grade;
+	try {
+		this->setGrade(grade);
+	}
+	catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+		quick_exit(1);
+	}
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const &src) : _name(src._name)
@@ -54,6 +55,36 @@ std::string const	Bureaucrat::getName() const
 int 				Bureaucrat::getGrade() const
 {
 	return (this->_grade);
+}
+
+void				Bureaucrat::setGrade(int grade)
+{
+	if (grade < 1)
+		throw Bureaucrat::GradeTooHighException();
+	else if (grade > 150)
+		throw Bureaucrat::GradeTooLowException();
+	else
+		this->_grade = grade;
+}
+
+void				Bureaucrat::incrementGrade()
+{
+	try {
+		this->setGrade(this->_grade - 1);
+	}
+	catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
+}
+
+void				Bureaucrat::decrementGrade()
+{
+	try {
+		this->setGrade(this->_grade + 1);
+	}
+	catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()
