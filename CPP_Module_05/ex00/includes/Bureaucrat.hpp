@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 21:58:15 by dateixei          #+#    #+#             */
-/*   Updated: 2024/01/23 00:50:31 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/01/27 17:13:40 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Bureaucrat
 {
 private:
-	std::string const	_name;
+	const std::string	_name;
 	int 				_grade;
 public:
 	Bureaucrat();
