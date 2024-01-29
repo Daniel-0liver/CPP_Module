@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 21:59:56 by dateixei          #+#    #+#             */
-/*   Updated: 2024/01/24 00:40:30 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/01/29 23:39:05 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,17 @@ void				Bureaucrat::decrementGrade() {
 }
 
 void				Bureaucrat::signForm(Form &form) {
-	try {
-		beSigned(bureaucrat);
-		std::cout << bureaucrat.getName() << " signs " << this->_name << std::endl;
-	}
-	catch (std::exception &e) {
-		std::cout << bureaucrat.getName() << " cannot sign " << this->_name << " because " << e.what() << std::endl;
+	if (form.getSigned())
+		std::cout << this->getName() << " cannot sign " << form.getName() << " because it's already signed" << std::endl;
+	else
+	{
+		try {
+			form.beSigned(*this);
+			std::cout << this->getName() << " signs " << form.getName() << std::endl;
+		}
+		catch (std::exception &e) {
+			std::cout << this->getName() << " cannot sign " << form.getName() << " because " << e.what() << std::endl;
+		}
 	}
 }
 

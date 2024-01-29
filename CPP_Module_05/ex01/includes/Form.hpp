@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 01:06:03 by dateixei          #+#    #+#             */
-/*   Updated: 2024/01/24 00:39:20 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/01/29 23:20:01 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Form
 {
 private:
 	std::string const	_name;
-	bool				_signed;
+	bool				_isSigned;
 	int const			_gradeToSign;
 	int const			_gradeToExecute;
 public:
