@@ -2,13 +2,15 @@ GREEN		= 	\033[0;32m
 RED			= 	\033[0;31m
 RESET		= 	\033[0m
 
-NAME		=	ex03
+NAME		=	ex01
 
 HEADER		=	./includes
 
 OBJ			=	$(patsubst src%, obj%, $(SRC:.cpp=.o))
 
 SRC			=	src/main.cpp \
+				src/Bureaucrat.cpp \
+				src/Form.cpp
 
 CC			=	c++
 
@@ -27,7 +29,7 @@ obj/%.o:	src/%.cpp
 			@echo "$@ $(GREEN)created$(RESET)"
 
 valgrind:	all
-	valgrind --leak-check=full --show-leak-kinds=all --quiet ./ex02
+	valgrind --leak-check=full --show-leak-kinds=all --quiet ./ex01
 
 clean:
 			@rm -rf $(OBJ) obj
