@@ -12,15 +12,17 @@
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main()
 {
-	Bureaucrat bureaucrat("Bureaucrat", 1);
-	AForm form("Form", 1, 1);
-
-	std::cout << bureaucrat << std::endl;
-	std::cout << form << std::endl;
+	Bureaucrat bureaucrat("Bureaucrat", 150);
+	Bureaucrat bureaucrat2("Bureaucrat", 1);
+	ShrubberyCreationForm form("home");
 	bureaucrat.signForm(form);
-	std::cout << form << std::endl;
+	bureaucrat.executeForm(form);
+	bureaucrat2.signForm(form);
+	bureaucrat.executeForm(form);
+	
 	return (0);
 }
