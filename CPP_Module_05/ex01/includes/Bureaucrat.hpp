@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 21:58:15 by dateixei          #+#    #+#             */
-/*   Updated: 2024/01/29 23:28:33 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/01/30 00:01:08 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <string>
 #include <exception>
 #include <cstdlib>
-
 
 class Form;
 class Bureaucrat
