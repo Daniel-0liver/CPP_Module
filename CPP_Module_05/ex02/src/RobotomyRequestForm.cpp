@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/01 23:42:12 by dateixei          #+#    #+#             */
+/*   Updated: 2024/02/01 23:42:14 by dateixei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) 
     : AForm("RobotomyRequestForm", 72, 45), _target(target) {}
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &other) {
-    *this = other;
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &other) 
+	: AForm(other), _target(other._target) {
 }
 
 RobotomyRequestForm::~RobotomyRequestForm() {}
@@ -21,12 +33,17 @@ std::string RobotomyRequestForm::getTarget() const {
 }
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const {
-    if (rand() % 2) {
-        std::cout << this->getTarget() << " has been robotomized successfully." << std::endl;
-        execute(executor);
-    } else {
-        std::cout << this->getTarget() << " robotomization failed." << std::endl;
-    }
+    if (executor.getGrade() > this->getGradeToExecute())
+		throw AForm::GradeTooLowException();
+	else if (!this->getSigned())
+		throw AForm::FormNotSignedException();
+	else {
+		std::cout << "*drilling noises*" << std::endl;
+		if (rand() % 2)
+			std::cout << this->_target << " has been robotomized successfully." << std::endl;
+		else
+			std::cout << this->_target << " robotomization failed." << std::endl;
+	}
 }
 
 std::ostream &operator<<(std::ostream &out, RobotomyRequestForm const &other) {

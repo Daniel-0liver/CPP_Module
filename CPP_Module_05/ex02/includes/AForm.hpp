@@ -6,11 +6,12 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 00:05:57 by dateixei          #+#    #+#             */
-/*   Updated: 2024/01/30 00:09:59 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/02/01 23:41:10 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+
 #include "Bureaucrat.hpp"
 #include <iostream>
 #include <string>
