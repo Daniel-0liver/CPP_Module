@@ -13,6 +13,7 @@
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 int main()
 {
@@ -24,5 +25,18 @@ int main()
 	bureaucrat2.signForm(form);
 	bureaucrat.executeForm(form);
 	
+	// Test RobotomyRequestForm
+	std::cout << std::endl;
+	std::cout << "Test RobotomyRequestForm" << std::endl;
+	RobotomyRequestForm form2("home");
+	std::cout << "Sign form2" << std::endl;
+	bureaucrat.signForm(form2);
+	std::cout << "Execute form2" << std::endl;
+	bureaucrat.executeForm(form2);
+	std::cout << "Sign form2" << std::endl;
+	bureaucrat2.signForm(form2);
+	std::cout << "Execute form2" << std::endl;
+	bureaucrat.executeForm(form2);
+
 	return (0);
 }
