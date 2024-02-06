@@ -9,6 +9,12 @@ HEADER		=	./includes
 OBJ			=	$(patsubst src%, obj%, $(SRC:.cpp=.o))
 
 SRC			=	src/main.cpp \
+				src/Bureaucrat.cpp \
+				src/AForm.cpp \
+				src/ShrubberyCreationForm.cpp \
+				src/RobotomyRequestForm.cpp \
+				src/PresidentialPardonForm.cpp \
+				src/Intern.cpp
 
 CC			=	c++
 
@@ -27,7 +33,7 @@ obj/%.o:	src/%.cpp
 			@echo "$@ $(GREEN)created$(RESET)"
 
 valgrind:	all
-	valgrind --leak-check=full --show-leak-kinds=all --quiet ./ex02
+	valgrind --leak-check=full --show-leak-kinds=all --quiet ./ex03
 
 clean:
 			@rm -rf $(OBJ) obj
