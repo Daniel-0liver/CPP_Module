@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 00:07:12 by dateixei          #+#    #+#             */
-/*   Updated: 2024/02/06 00:43:55 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/02/07 00:06:55 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,17 @@
 
 int main()
 {
-	// Test Intern
+	// Subject test
+	Intern someRandomIntern;
+	AForm* rrf;
+
+	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+	
+	// My tests
 	Intern intern;
 	Bureaucrat bureaucrat("Bureaucrat", 1);
+	rrf->beSigned(bureaucrat);
+	rrf->execute(bureaucrat);
 	
 	// Test ShrubberyCreationForm
 	AForm *shrubberyCreationForm = intern.makeForm("shrubbery creation", "home");
@@ -53,6 +61,8 @@ int main()
 	{
 		std::cerr << e.what() << std::endl;
 	}
+
+	delete rrf;
 	
 	return (0);
 }
