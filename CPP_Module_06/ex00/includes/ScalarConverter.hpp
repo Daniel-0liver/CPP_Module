@@ -24,17 +24,15 @@
 
 class ScalarConverter
 {
-	private:
-
+private:
 	ScalarConverter();
 	ScalarConverter(const ScalarConverter &copy);
-	ScalarConverter& operator=(const ScalarConverter &change);
+	ScalarConverter &operator=(const ScalarConverter &change);
 
-	public:
-
+public:
 	~ScalarConverter();
-	static void convert(const std::string& input);
-	static int countoccur(const std::string& input, const char cara);
-	static bool checkinput(const std::string& input);
-	static bool onlyzero(const std::string& input);
+	static void convert(const std::string &input);
+	static int countoccur(const std::string &input, const char cara);
+	static bool checkinput(const std::string &input);
+	static bool onlyzero(const std::string &input);
 };
