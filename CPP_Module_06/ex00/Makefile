@@ -9,7 +9,7 @@ HEADER		=	./includes
 OBJ			=	$(patsubst src%, obj%, $(SRC:.cpp=.o))
 
 SRC			=	src/main.cpp \
-				src/ScalarConverte.cpp
+				src/ScalarConverter.cpp
 
 CC			=	c++
 

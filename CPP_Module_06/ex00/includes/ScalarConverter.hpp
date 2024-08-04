@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverte.hpp                                 :+:      :+:    :+:   */
+/*   ScalarConverter.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 17:48:01 by dateixei          #+#    #+#             */
-/*   Updated: 2024/02/11 02:25:11 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/03/27 22:14:44 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
 #include <string>
-#include <iomanip>
-#include <cmath>
 #include <climits>
-#include <cfloat>
-#include <cctype>
 #include <cstdlib>
-#include <cstring>
-#include <exception>
 
-class ScalarConverte
+#define BLUE "\033[94m"
+#define RESET "\033[0m"
+#define RED "\033[31m"
+#define GREEN "\033[32m"
+#define YELLOW "\033[33m"
+
+class ScalarConverter
 {
 	private:
-		ScalarConverte();
-		ScalarConverte(ScalarConverte const &other);
-		ScalarConverte &operator=(ScalarConverte const &other);
+
+	ScalarConverter();
+	ScalarConverter(const ScalarConverter &copy);
+	ScalarConverter& operator=(const ScalarConverter &change);
+
 	public:
-		~ScalarConverte();
-		static void	convert(std::string c);
+
+	~ScalarConverter();
+	static void convert(const std::string& input);
+	static int countoccur(const std::string& input, const char cara);
+	static bool checkinput(const std::string& input);
+	static bool onlyzero(const std::string& input);
 };
