@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/04 23:31:18 by dateixei          #+#    #+#             */
-/*   Updated: 2024/08/04 23:58:14 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/08/05 01:26:51 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ Serializer &Serializer::operator=(const Serializer &change)
 
 Serializer::~Serializer() {}
 
-uintptr_t Serializer::serialize(Data* ptr)
+uintptr_t Serializer::serialize(Data *ptr)
 {
 	return (reinterpret_cast<uintptr_t>(ptr));
 }
 
-Data* Serializer::deserialize(uintptr_t raw)
+Data *Serializer::deserialize(uintptr_t raw)
 {
-	return (reinterpret_cast<Data*>(raw));
+	return (reinterpret_cast<Data *>(raw));
 }

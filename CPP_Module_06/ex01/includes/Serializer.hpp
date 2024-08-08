@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/04 23:31:09 by dateixei          #+#    #+#             */
-/*   Updated: 2024/08/04 23:59:50 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/08/05 01:27:00 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ private:
 	Serializer();
 	Serializer(const Serializer &);
 	Serializer &operator=(const Serializer &);
+
 public:
 	~Serializer();
-	static uintptr_t serialize(Data* ptr);
-	static Data* deserialize(uintptr_t raw);
+	static uintptr_t serialize(Data *ptr);
+	static Data *deserialize(uintptr_t raw);
 };
