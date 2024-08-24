@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 12:18:54 by dateixei          #+#    #+#             */
-/*   Updated: 2024/08/24 23:51:44 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/08/25 00:51:11 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main() {
         arr4 = arr2;
         std::cout << "arr4 size: " << arr4.size() << std::endl;
 
-        arr2[0] = 10;
+		arr2[0] = 10;
         std::cout << "arr2[0]: " << arr2[0] << std::endl;
         std::cout << "arr3[0]: " << arr3[0] << std::endl;
         std::cout << "arr4[0]: " << arr4[0] << std::endl;
