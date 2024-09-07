@@ -17,6 +17,7 @@
 #include <algorithm>
 #include <exception>
 #include <iterator>
+#include <climits>
 
 class MaximumSizeReachedException : public std::exception
 {
@@ -24,6 +25,15 @@ public:
 	const char *what() const throw()
 	{
 		return ("Maximum size reached!");
+	}
+};
+
+class NotEnoughElementsExcepiton : public std::exception
+{
+public:
+	const char *what() const throw()
+	{
+		return ("Not Enough elements!");
 	}
 };
 
@@ -40,8 +50,10 @@ public:
 	Span &operator=(const Span &copy);
 	~Span();
 
-	// void addNumber();
-	// int shortestSpan();
-	// int longestSpan();
+	void addNumber(int number);
+	int shortestSpan();
+	int longestSpan();
+	void fillSpanRand();
+	void fillSpanWithIterators(std::vector<int>::iterator begin, std::vector<int>::iterator end);
 	void printSpan();
 };
