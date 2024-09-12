@@ -32,7 +32,7 @@ private:
 public:
 	~ScalarConverter();
 	static void convert(const std::string &input);
-	static int countoccur(const std::string &input, const char cara);
-	static bool checkinput(const std::string &input);
-	static bool onlyzero(const std::string &input);
+	static int countOccur(const std::string &input, const char cara);
+	static bool checkInput(const std::string &input);
+	static bool onlyZero(const std::string &input);
 };

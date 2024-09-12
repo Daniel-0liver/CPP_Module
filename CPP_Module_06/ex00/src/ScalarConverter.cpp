@@ -24,7 +24,7 @@ ScalarConverter &ScalarConverter::operator=(const ScalarConverter &change)
 
 ScalarConverter::~ScalarConverter() {}
 
-int ScalarConverter::countoccur(const std::string &input, const char targetChar)
+int ScalarConverter::countOccur(const std::string &input, const char targetChar)
 {
 	int count = 0;
 	for (unsigned int i = 0; i < input.length(); i++)
@@ -35,9 +35,9 @@ int ScalarConverter::countoccur(const std::string &input, const char targetChar)
 	return (count);
 }
 
-bool ScalarConverter::checkinput(const std::string &input)
+bool ScalarConverter::checkInput(const std::string &input)
 {
-	int point_nb = ScalarConverter::countoccur(input, '.');
+	int point_nb = ScalarConverter::countOccur(input, '.');
 	if (point_nb > 1)
 		return false;
 	else if (point_nb)
@@ -53,7 +53,7 @@ bool ScalarConverter::checkinput(const std::string &input)
 	return true;
 }
 
-bool ScalarConverter::onlyzero(const std::string &input)
+bool ScalarConverter::onlyZero(const std::string &input)
 {
 	unsigned int i = 0;
 	for (; i < input.length() && std::isdigit(input[i]); i++)
@@ -68,7 +68,7 @@ bool ScalarConverter::onlyzero(const std::string &input)
 
 void ScalarConverter::convert(const std::string &input)
 {
-	if (!ScalarConverter::checkinput(input))
+	if (!ScalarConverter::checkInput(input))
 	{
 		std::cout << RED << "Error: bad input" << RESET << std::endl;
 		return;
@@ -112,13 +112,13 @@ void ScalarConverter::convert(const std::string &input)
 	else
 		std::cout << BLUE << "char: " << RESET << "'" << toChar << "'" << std::endl;
 
-	if (ScalarConverter::countoccur(input, '.') && ScalarConverter::onlyzero(input))
+	if (ScalarConverter::countOccur(input, '.') && ScalarConverter::onlyZero(input))
 	{
 		std::cout << BLUE << "int: " << RESET << toInt << std::endl;
 		std::cout << BLUE << "float: " << RESET << toFloat << ".0f" << std::endl;
 		std::cout << BLUE << "double: " << RESET << toDouble << ".0" << std::endl;
 	}
-	else if (ScalarConverter::countoccur(input, '.'))
+	else if (ScalarConverter::countOccur(input, '.'))
 	{
 		std::cout << BLUE << "int: " << RESET << toInt << std::endl;
 		std::cout << BLUE << "float: " << RESET << toFloat << "f" << std::endl;
