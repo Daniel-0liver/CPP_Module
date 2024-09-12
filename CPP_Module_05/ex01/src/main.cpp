@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 21:55:10 by dateixei          #+#    #+#             */
-/*   Updated: 2024/01/29 23:49:58 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/09/10 17:02:39 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,14 @@ int main() {
 	Form form2("Form2", 150, 150);
 	std::cout << form;
 	std::cout << form2;
+	try
+	{
+		form.beSigned(bureaucrat2);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 	std::cout << std::endl;
 	
 	std::cout << "--- Bureaucrat sign Form ---" << std::endl;

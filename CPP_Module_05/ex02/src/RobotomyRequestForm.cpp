@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 23:42:12 by dateixei          #+#    #+#             */
-/*   Updated: 2024/02/01 23:42:14 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/09/10 17:42:28 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ std::string RobotomyRequestForm::getTarget() const {
 }
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const {
+	srand (time(NULL));
     if (executor.getGrade() > this->getGradeToExecute())
 		throw AForm::GradeTooLowException();
 	else if (!this->getSigned())

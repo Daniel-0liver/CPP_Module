@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 00:07:12 by dateixei          #+#    #+#             */
-/*   Updated: 2024/02/07 00:06:55 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/09/10 17:36:20 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,25 +31,25 @@ int main()
 	rrf->beSigned(bureaucrat);
 	rrf->execute(bureaucrat);
 	
-	// Test ShrubberyCreationForm
+	std::cout << "--- Test ShrubberyCreationForm ---\n";
 	AForm *shrubberyCreationForm = intern.makeForm("shrubbery creation", "home");
 	shrubberyCreationForm->beSigned(bureaucrat);
 	shrubberyCreationForm->execute(bureaucrat);
 	delete shrubberyCreationForm;
 
-	// Test RobotomyRequestForm
+	std::cout << "--- Test RobotomyRequest ---\n";
 	AForm *robotomyRequestForm = intern.makeForm("robotomy request", "home");
 	robotomyRequestForm->beSigned(bureaucrat);
 	robotomyRequestForm->execute(bureaucrat);
 	delete robotomyRequestForm;
 
-	// Test PresidentialPardonForm
+	std::cout << "--- Test PresidentialPardonForm ---\n";
 	AForm *presidentialPardonForm = intern.makeForm("presidential pardon", "home");
 	presidentialPardonForm->beSigned(bureaucrat);
 	presidentialPardonForm->execute(bureaucrat);
 	delete presidentialPardonForm;
 
-	// Test UnknownFormException
+	std::cout << "--- Test UnknownFormException ---\n";
 	try
 	{
 		AForm *unknownForm = intern.makeForm("unknown form", "home");
