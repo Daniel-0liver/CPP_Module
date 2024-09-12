@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 22:07:14 by dateixei          #+#    #+#             */
-/*   Updated: 2024/09/12 02:18:11 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/09/12 02:32:06 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,27 @@ void BitcoinExchange::fileChecker(char* file) {
 	std::ifstream dataFile("data.csv");
 	if(!inFile.is_open() || !dataFile.is_open()){
 		std::cerr << "Error: Could not open file " << file << std::endl;
-		inFile.close();
-		dataFile.close();
         return;
 	}
+	std::map<std::string, std::string> dataMap;
+	std::string line;
 	
+	std::getline(dataFile, line);
+
+	while (std::getline(dataFile, line))
+	{
+		std::istringstream ss(line);
+		std::string date, exchangeRate;
+
+		if (std::getline(ss, date, ',') && std::getline(ss, exchangeRate))
+		{
+			dataMap[date] = exchangeRate;
+		}
+	}
+	
+	for (std::map<std::string, std::string>::iterator it = dataMap.begin(); it != dataMap.end(); ++it) {
+        std::cout << it->first << ": " << it->second << std::endl;
+    }
+    inFile.close();
+    dataFile.close();
 }
