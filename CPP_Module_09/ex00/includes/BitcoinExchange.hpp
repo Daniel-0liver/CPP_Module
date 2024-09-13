@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 22:07:10 by dateixei          #+#    #+#             */
-/*   Updated: 2024/09/12 02:26:22 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/09/13 21:09:43 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,5 @@ private:
 
 public:
 	static void		fileChecker(char* file);
+	static void 	checkData(std::map<std::string, double>& dataMap, std::ifstream& dataFile);
 };
