@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 01:01:55 by dateixei          #+#    #+#             */
-/*   Updated: 2024/09/14 15:57:56 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/09/14 16:55:53 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,34 +17,31 @@
 
 int main() {
 	std::srand(std::time(0));
-    Base* obj1 = new A;
-    identify(obj1);
+    A objA;
+    identify(objA);
 
-    Base* obj2 = new B;
-    identify(obj2);
+    B objB;
+    identify(&objB);
 
-    Base* obj3 = new C;
-    identify(obj3);
+    C objC;
+    identify(objC);
+    identify(&objC);
 
-    Base* obj4 = new Base;
-    identify(obj4);
+    Base objBase;
+    identify(objBase);
 
-	Base* obj5 = generate();
-	identify(obj5);
+	Base* objRandOne = generate();
+	identify(objRandOne);
 
-	Base* obj6 = generate();
-	identify(obj6);
+	Base* objRandTwo = generate();
+	identify(objRandTwo);
 
-	Base* obj7 = generate();
-	identify(obj7);
+	Base* objRandThree = generate();
+	identify(objRandThree);
 
-    delete obj1;
-    delete obj2;
-    delete obj3;
-    delete obj4;
-	delete obj5;
-	delete obj6;
-	delete obj7;
+	delete objRandOne;
+	delete objRandTwo;
+	delete objRandThree;
 
     return 0;
 }

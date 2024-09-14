@@ -45,7 +45,7 @@ bool ScalarConverter::checkInput(const std::string &input)
 		unsigned int i = 0;
 		for (; i < input.length() && (std::isdigit(input[i]) || input[i] == '.'); i++)
 			;
-		if (i >= 3 && (input[i] == 'f' || !input[i]))
+		if (i >= 3 && (input[i] == 'f' || !input[i]) && !input[i+1])
 			return true;
 		else
 			return false;
@@ -75,7 +75,9 @@ void ScalarConverter::convert(const std::string &input)
 	}
 
 	float toFloat = std::atof(input.c_str());
+	std::cout << toFloat << std::endl;
 	char toChar = static_cast<char>(toFloat);
+	std::cout << toChar << std::endl;
 	int toInt = static_cast<int>(toFloat);
 	double toDouble = static_cast<double>(toFloat);
 	std::string infinite[6] = {"-inff", "+inff", "nanf", "-inf", "+inf", "nan"};
