@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 22:07:10 by dateixei          #+#    #+#             */
-/*   Updated: 2024/09/14 02:30:14 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/09/14 14:18:59 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,24 +40,27 @@ public:
 		virtual const char *what() const throw();
 	};
 
-	class ValueOutOfRange : public std::exception
+	class TooLargeNumber : public std::exception
 	{
 	public:
-		ValueOutOfRange();
+		TooLargeNumber();
 		virtual const char *what() const throw();
 	};
 
-	class InvalidInput : public std::exception
+	class NotAPositiveNumber : public std::exception
 	{
 	public:
-		InvalidInput();
+		NotAPositiveNumber();
 		virtual const char *what() const throw();
 	};
 
 	class InvalidDate : public std::exception
 	{
+	private:
+		std::string _message;
 	public:
-		InvalidDate();
+		InvalidDate(const std::string& msg);
+		virtual ~InvalidDate() throw();
 		virtual const char *what() const throw();
 	};
 

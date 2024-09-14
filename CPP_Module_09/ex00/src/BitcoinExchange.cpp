@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 22:07:14 by dateixei          #+#    #+#             */
-/*   Updated: 2024/09/14 02:52:41 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/09/14 14:18:48 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void BitcoinExchange::fileChecker(char *file)
 	std::ifstream dataFile("data.csv");
 	if (!inFile.is_open() || !dataFile.is_open())
 	{
-		std::cerr << "Error: Could not open file" << file << std::endl;
+		std::cerr << "Error: Could not open file." << file << std::endl;
 		return;
 	}
 	std::map<std::string, double> dataMap;
@@ -108,20 +108,24 @@ void BitcoinExchange::searchData(std::map<std::string, double> &dataMap, std::st
 	std::string key = parseDate(buffer);
 	int pos = buffer.rfind(' ');
 	double value = strtod((buffer.substr(pos)).c_str(), NULL);
-	if (value < 0 || value > 1000)
-		throw ValueOutOfRange();
+	if (value > 1000)
+		throw TooLargeNumber();
+	else if (value < 0)
+		throw NotAPositiveNumber();
 	std::map<std::string, double>::iterator it = dataMap.find(key);
 	if (it != dataMap.end())
 		std::cout << key << " => " << value << " = " << (value * it->second) << std::endl;
 	else
 	{
 		it = dataMap.lower_bound(key);
-		if (it != dataMap.end())
-			std::cout << it->first << " => " << value << " = " << (value * it->second) << std::endl;
-		else
+		if (it != dataMap.begin())
 		{
 			--it;
-			std::cout << it->first << " => " << value << " = " << (value * it->second) << std::endl;
+			std::cout << key << " => " << value << " = " << (value * it->second) << std::endl;
+		}
+		else
+		{
+			std::cout << key << " => " << value << " = " << (value * it->second) << std::endl;
 		}
 	}
 }
@@ -129,17 +133,17 @@ void BitcoinExchange::searchData(std::map<std::string, double> &dataMap, std::st
 std::string BitcoinExchange::parseDate(std::string buffer)
 {
 	if (buffer.find_first_not_of("0123456789.-| ") != std::string::npos)
-		throw InvalidInput();
+		throw InvalidDate("Error: bad input => " + buffer);
 	if (!std::isdigit(buffer[0]) || !std::isdigit(buffer[1]) || !std::isdigit(buffer[2]) || !std::isdigit(buffer[3]) || buffer[4] != '-')
-		throw InvalidInput();
+		throw InvalidDate("Error: bad input => " + buffer);
 	int month = atoi((buffer.substr(5, 6)).c_str());
 	if (buffer[7] != '-' || month < 1 || month > 12)
-		throw InvalidDate();
+		throw InvalidDate("Error: bad input => " + buffer);
 	int day = atoi((buffer.substr(8, 9)).c_str());
 	if (buffer[10] != ' ' || day < 1 || day > 31)
-		throw InvalidDate();
+		throw InvalidDate("Error: bad input => " + buffer);
 	if (buffer[11] != '|' || buffer[12] != ' ')
-		throw InvalidInput();
+		throw InvalidDate("Error: bad input => " + buffer);
 	int pos = buffer.find(' ');
 	return (buffer.substr(0, pos));
 }
@@ -161,25 +165,24 @@ const char *BitcoinExchange::EmptyFile::what() const throw()
 	return ("Error: File is empty");
 }
 
-BitcoinExchange::ValueOutOfRange::ValueOutOfRange() {}
+BitcoinExchange::TooLargeNumber::TooLargeNumber() {}
 
-const char *BitcoinExchange::ValueOutOfRange::what() const throw()
+const char *BitcoinExchange::TooLargeNumber::what() const throw()
 {
-	return ("Error: this value is not in the range of 0 to 1000");
+	return ("Error: too large a number.");
 }
 
-BitcoinExchange::InvalidInput::InvalidInput() {}
-
-const char *BitcoinExchange::InvalidInput::what() const throw()
+BitcoinExchange::NotAPositiveNumber::NotAPositiveNumber() {}
+const char *BitcoinExchange::NotAPositiveNumber::what() const throw()
 {
-	return ("Error: invalid input or format error");
+	return ("Error: not a positive number.");
 }
 
-BitcoinExchange::InvalidDate::InvalidDate() {}
-
+BitcoinExchange::InvalidDate::InvalidDate(const std::string& msg) : _message(msg) {}
+BitcoinExchange::InvalidDate::~InvalidDate() throw() {}
 const char *BitcoinExchange::InvalidDate::what() const throw()
 {
-	return ("Error: invalid date or format error");
+	return (_message.c_str());
 }
 
 BitcoinExchange::DataBaseError::DataBaseError() {}
