@@ -6,24 +6,28 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 01:01:55 by dateixei          #+#    #+#             */
-/*   Updated: 2024/09/12 19:03:13 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/09/14 15:57:56 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Base.hpp"
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
 
 int main() {
+	std::srand(std::time(0));
     Base* obj1 = new A;
-    identify(obj1); // Expected output: A object identified !
+    identify(obj1);
 
     Base* obj2 = new B;
-    identify(obj2); // Expected output: B object identified !
+    identify(obj2);
 
     Base* obj3 = new C;
-    identify(obj3); // Expected output: C object identified !
+    identify(obj3);
 
     Base* obj4 = new Base;
-    identify(obj4); // Expected output: Object not identified :(
+    identify(obj4);
 
 	Base* obj5 = generate();
 	identify(obj5);

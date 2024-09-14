@@ -6,28 +6,30 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 01:27:30 by dateixei          #+#    #+#             */
-/*   Updated: 2024/08/05 01:35:26 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/09/14 15:56:22 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Base.hpp"
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
 
 Base::~Base() {}
 
 Base * generate(void)
 {
-	std::srand(std::time(0));
 	int random_number = std::rand() % 3;
 	switch (random_number)
 	{
 	case 0:
-		std::cout << BLUE << "A object instanciates" << RESET << std::endl;
+		std::cout << GREEN << "A object instanciates" << RESET << std::endl;
 		return (new A);
 	case 1:
 		std::cout << BLUE << "B object instanciates" << RESET << std::endl;
 		return (new B);
 	case 2:
-		std::cout << BLUE << "C object instanciates" << RESET << std::endl;
+		std::cout << YELLOW << "C object instanciates" << RESET << std::endl;
 		return (new C);
 	}
 	return (NULL);
@@ -38,9 +40,9 @@ void identify(Base* p)
 	if (dynamic_cast<A*>(p) != NULL)
 		std::cout << GREEN << "A object identified !" << RESET << std::endl;
 	else if(dynamic_cast<B*>(p) != NULL)
-		std::cout << GREEN << "B object identified !" << RESET << std::endl;
+		std::cout << BLUE << "B object identified !" << RESET << std::endl;
 	else if (dynamic_cast<C*>(p) != NULL)
-		std::cout << GREEN << "C object identified !" << RESET << std::endl;
+		std::cout << YELLOW << "C object identified !" << RESET << std::endl;
 	else
 		std::cerr << RED << "Object not identified :(" << RESET << std::endl;
 }
