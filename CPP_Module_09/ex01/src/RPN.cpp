@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 23:54:32 by dateixei          #+#    #+#             */
-/*   Updated: 2024/09/15 02:17:09 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/09/16 17:42:50 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,22 @@ void expressionChecker(char *expression)
 	std::stack<double> seq;
 	std::string exp(expression);
 
-	if (exp.find_first_not_of("0123456789 -+/*") != std::string::npos)
+    while (!exp.empty() && exp[exp.size() - 1] == ' ')
+	{
+        exp.erase(exp.size() - 1);
+	}
+
+	while (!exp.empty() && exp[0] == ' ')
+    {
+        exp.erase(0, 1);
+    }
+	
+	if ((exp.find_first_not_of("0123456789 -+/*") != std::string::npos) &&
+			exp.find("  ") != std::string::npos)
+	{
 		throw InvalidExpression();
+	}
+
 	while (true)
 	{
 		size_t pos = exp.find(' ');

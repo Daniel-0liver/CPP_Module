@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 12:18:54 by dateixei          #+#    #+#             */
-/*   Updated: 2024/09/07 02:58:50 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/09/15 17:52:25 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void testLargeSpan()
 	sp.fillSpanRand();
 	std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
 	std::cout << "Longest span: " << sp.longestSpan() << std::endl;
-	sp.printSpan();
+	// sp.printSpan();
 
 }
 

@@ -6,7 +6,7 @@
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 12:18:54 by dateixei          #+#    #+#             */
-/*   Updated: 2024/09/16 13:07:16 by dateixei         ###   ########.fr       */
+/*   Updated: 2024/09/16 18:10:08 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(int ac, char** av)
 		try {
 			clock_t start = clock();
 			fillList(lst, av);
-			sortList(lst);
+			lst = fordJohnsonSortList(lst);
 			clock_t end = clock();
 			fillVector(temp, av);
 			std::cout << "Before: ";
@@ -38,7 +38,7 @@ int main(int ac, char** av)
 			
 			start = clock();
 			fillVector(vec, av);
-			sortVector(vec);
+			vec = fordJohnsonSortVec(vec);
 			end = clock();
 
 			std::cout << "Time to process a range of "

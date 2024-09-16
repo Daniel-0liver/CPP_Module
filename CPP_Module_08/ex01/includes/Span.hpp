@@ -18,6 +18,7 @@
 #include <exception>
 #include <iterator>
 #include <climits>
+#include <fstream>
 
 class MaximumSizeReachedException : public std::exception
 {
