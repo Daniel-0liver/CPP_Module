@@ -1,5 +1,7 @@
 # CPP_Module
 ## [Module 00](https://github.com/Daniel-0liver/CPP_Module/tree/main/CPP_Module_00) DONE
+### Namespaces, classes, member functions, stdio streams, initialization lists, static, const, and some other basic stuf.
+
 ## [Module 01](https://github.com/Daniel-0liver/CPP_Module/tree/main/CPP_Module_01) DONE
 ## [Module 02](https://github.com/Daniel-0liver/CPP_Module/tree/main/CPP_Module_02) DONE
 ## [Module 03](https://github.com/Daniel-0liver/CPP_Module/tree/main/CPP_Module_03) DONE
