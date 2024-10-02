@@ -16,7 +16,10 @@
 
 ## [Module 05](https://github.com/Daniel-0liver/CPP_Module/tree/main/CPP_Module_05) DONE
 ### Repetition and Exceptions.
+
 ## [Module 06](https://github.com/Daniel-0liver/CPP_Module/tree/main/CPP_Module_06) DONE
+### C++ casts.
+
 ## [Module 07](https://github.com/Daniel-0liver/CPP_Module/tree/main/CPP_Module_07) DONE
 ## [Module 08](https://github.com/Daniel-0liver/CPP_Module/tree/main/CPP_Module_08) DONE
 ## [Module 09](https://github.com/Daniel-0liver/CPP_Module/tree/main/CPP_Module_09) DONE
